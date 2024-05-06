@@ -1,0 +1,28 @@
+<%- include("header") -%>
+    <!-- <%if(listTitle === "Thursday"){%>
+    <h1 style="color: red">It a weekday is : <%=daysOfTheWeeek%></h1>
+  <%}else{%>
+    <h1>It a weekday is : <%=listTitle%></h1>
+
+  <%}%> -->
+  <div class="box" id="heading">
+    <h1> <%= listTitle %> </h1>
+  </div>
+  <div id="box">
+    <!-- <ul> -->
+      <!-- <li>Money</li>
+      <li>Cloth</li>
+      <li>Sea</li> -->
+      <% for (var i = 0; i < todoListItems.length; i++) { %>
+        <div class="item">
+          <input type="checkbox">
+          <p> <%= todoListItems[i] %> </p>
+        </div>
+      <%}%>
+    <!-- </ul> -->
+    <form class="item" action="/" method="post">
+      <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+      <button type="submit" name="list" value= <%= listTitle %>>+</button>
+    </form>
+  </div>
+  <%- include("footer") -%>
